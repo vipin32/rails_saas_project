@@ -23,16 +23,18 @@ default: &default
 
 development:
   <<: *default
-  database: rails_saas_project_postgresql_development
+  database: rails_sass_project
+
+  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: rails_saas_project_postgresql
+  username: postgres
 
   # The password associated with the postgres role (username).
-  #password:
+  password: root
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -57,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_saas_project_postgresql_test
+  database: rails_sass_project
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: rails_saas_project_postgresql_production
-  username: rails_saas_project_postgresql
+  database: rails_sass_project
+  username: postgres
   password: <%= ENV["RAILS_SAAS_PROJECT_POSTGRESQL_DATABASE_PASSWORD"] %>
